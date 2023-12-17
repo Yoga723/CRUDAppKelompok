@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "27872044035",
+    "firebase_url": "https://miotdb2-default-rtdb.firebaseio.com",
+    "project_id": "miotdb2",
+    "storage_bucket": "miotdb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27872044035:android:a80ca500798a7bdce59a36",
+        "android_client_info": {
+          "package_name": "com.example.crudapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27872044035-453n8d227fkq4flaqkm7qvhsmq8n3as0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0_KLV6_DNS4HqQcZFB17H9Mt5vsHMkKk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27872044035-453n8d227fkq4flaqkm7qvhsmq8n3as0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27872044035:android:bd243e3b9f7da861e59a36",
+        "android_client_info": {
+          "package_name": "com.example.crudapp2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27872044035-453n8d227fkq4flaqkm7qvhsmq8n3as0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0_KLV6_DNS4HqQcZFB17H9Mt5vsHMkKk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27872044035-453n8d227fkq4flaqkm7qvhsmq8n3as0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
