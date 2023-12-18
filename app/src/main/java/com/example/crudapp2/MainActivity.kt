@@ -3,10 +3,13 @@ package com.example.crudapp2
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.view.View
+import android.widget.FrameLayout
 import android.widget.ListView
-import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.example.crudapp2.Adapters.AdapterMahasiswa
+import com.example.crudapp2.Fragments.AddFragment
 import com.example.crudapp2.Models.Mahasiswa
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.Firebase
@@ -18,13 +21,16 @@ import com.google.firebase.database.getValue
 import java.util.Objects
 
 class MainActivity : AppCompatActivity() {
-    @SuppressLint("SuspiciousIndentation")
+
+     lateinit var containerFrame: FrameLayout
+    @SuppressLint("SuspiciousIndentation", "MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val AddButton = findViewById<FloatingActionButton>(R.id.AddButton)
         val listView = findViewById<ListView>(R.id.listView)
+        containerFrame = findViewById(R.id.containerFrame)
 
         val database = Firebase.database
         val getDBRef = database.getReference("/Mahasiswa")
@@ -58,5 +64,27 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        AddButton.setOnClickListener {
+            replaceFragment(AddFragment())
+            Toast.makeText(this, "Menambahkan Mahasiswa", Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        containerFrame.visibility = View.VISIBLE
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.containerFrame, fragment)
+            .commit()
+
+    }
+
+    override fun onBackPressed() {
+        if(containerFrame.visibility == View.VISIBLE){
+            containerFrame.visibility = View.GONE
+        }
     }
 }
+
+

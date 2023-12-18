@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="354dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,18 +19,26 @@
         <TextView
             android:id="@+id/TestDBRes"
             android:textSize="35dp"
+            android:fontFamily="sans-serif-light"
+            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
+            android:text="Daftar Mahasiswa"
             />
 
         <ListView
             android:id="@+id/listView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             tools:layout_editor_absoluteX="12dp"
             tools:layout_editor_absoluteY="234dp"/>
+
+        <FrameLayout
+            android:id="@+id/containerFrame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
 
     </LinearLayout>
 
@@ -42,9 +50,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="20dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
         app:srcCompat="@android:drawable/ic_input_add"
-        android:contentDescription="Add" />
+        android:contentDescription="Add"
+        android:focusable="true" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
