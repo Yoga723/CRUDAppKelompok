@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         val dialogEdDe = Dialog(this)
         dialogEdDe.setContentView(R.layout.dialog_edit_delete)
 
+
 //            Get Data from FB and populate listView
             getDBRef.addValueEventListener(object : ValueEventListener{
 //            OnDatachange these code repeat.
@@ -88,14 +89,6 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("nim", selectedMahasiswa.nim.toString())
                 intent.putExtra("tempatLahir", selectedMahasiswa.tempatLahir)
                 startActivity(intent)
-//                getDataId.
-//                    .addOnSuccessListener {
-//                        dialogEdDe.hide()
-//                        Toast.makeText(this, "Data Mahasiswa Dihapus", Toast.LENGTH_LONG).show()
-//                    }
-//                    .addOnFailureListener{
-//                        Toast.makeText(this, "Data Mahasiswa Gagal di Hapus, Coba Lagi !", Toast.LENGTH_LONG).show()
-//                    }
             }
 
 //            Delete Actions
@@ -112,18 +105,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         AddButton.setOnClickListener {
-            replaceFragment(AddFragment())
+            containerFrame.visibility = View.VISIBLE
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.containerFrame, AddFragment())
+                .commit()
             Toast.makeText(this, "Menambahkan Mahasiswa", Toast.LENGTH_SHORT).show()
         }
-
-    }
-
-    private fun replaceFragment(fragment: Fragment) {
-        containerFrame.visibility = View.VISIBLE
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.containerFrame, fragment)
-            .commit()
 
     }
 
